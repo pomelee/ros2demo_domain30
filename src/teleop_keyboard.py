@@ -39,13 +39,15 @@ import rclpy
 from rclpy.qos import QoSProfile
 
 BURGER_MAX_LIN_VEL = 0.22
-BURGER_MAX_ANG_VEL = 2.84
+'BURGER_MAX_ANG_VEL = 2.84
+BURGER_MAX_ANG_VEL = 0.84
 
 WAFFLE_MAX_LIN_VEL = 0.26
 WAFFLE_MAX_ANG_VEL = 1.82
 
 LIN_VEL_STEP_SIZE = 0.01
-ANG_VEL_STEP_SIZE = 0.1
+'ANG_VEL_STEP_SIZE = 0.1
+ANG_VEL_STEP_SIZE = 0.2
 
 TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
 
@@ -124,10 +126,10 @@ def check_linear_limit_velocity(velocity):
 
 def check_angular_limit_velocity(velocity):
     if TURTLEBOT3_MODEL == 'burger':
-        '''
+        
         return constrain(velocity, -BURGER_MAX_ANG_VEL, BURGER_MAX_ANG_VEL)
-        '''
-        return 0.1
+        
+        'return 0.1
     else:
         return constrain(velocity, -WAFFLE_MAX_ANG_VEL, WAFFLE_MAX_ANG_VEL)
 
