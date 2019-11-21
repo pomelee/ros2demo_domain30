@@ -39,7 +39,8 @@ RUN /bin/bash -c "source /opt/ros/dashing/setup.bash ;\
                   colcon build --symlink-install"
 
 # Download demo example
-RUN /bin/bash -c "git clone https://github.com/intellicode-demo/ros2demo_domain30.git;\
+RUN /bin/bash -c "rm -f ros2demo_domain30/src/teleop_keyboard.py; \
+		  git clone https://github.com/intellicode-demo/ros2demo_domain30.git;\
                   cp ros2demo_domain30/src/run_teleoperation.sh . ;\
                   chmod +x teleop_keyboard.py ;\
                   cp ros2demo_domain30/src/entrypoint.sh . ;\
