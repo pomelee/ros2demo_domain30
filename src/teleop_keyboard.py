@@ -50,7 +50,7 @@ ANG_VEL_STEP_SIZE = 0.1
 TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
 
 msg = """
-Control Your TurtleBot3 source!!
+Control Your TurtleBot3(turn left)!!
 ---------------------------
 Moving around:
         w
@@ -80,7 +80,7 @@ def get_key(settings):
 
     termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
     '''
-    TEST_KEY = 'd'
+    TEST_KEY = 'a'
     time.sleep(10)
     return TEST_KEY
 
